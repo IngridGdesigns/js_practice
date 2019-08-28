@@ -38,5 +38,33 @@ console.log(year);//this will print 1994
 
 /* Example 2 */
 let newYear = "1892";
-console.log(-newYear); //it actually adds it after
+console.log(-newYear); //string is positive
 console.log(newYear);//this will print 1994
+
+//Logical Operators
+/* Example 1 */
+if (4 > 3 && 2 < 5){
+    console.log('yeah!');
+} 
+
+/* Example 2 */
+let sunlight = null;
+if(!sunlight){
+    sunlight = 'darkness';
+    console.log(sunlight);
+}
+//darkness
+
+////////////////////////////////////////////////////////////////
+
+//Relational Operator
+// all the uppercase characters are considered less than lowercase letters
+console.log('Zoo' > 'alphabet');
+//false
+
+
+////////////////////////////////////////////////////////////////
+
+//Ternary or Conditional Operator
+console.log( 5 > 44 ? 'yes' : 'no');
+//no
