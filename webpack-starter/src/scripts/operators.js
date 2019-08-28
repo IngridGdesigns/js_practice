@@ -41,6 +41,8 @@ let newYear = "1892";
 console.log(-newYear); //string is positive
 console.log(newYear);//this will print 1994
 
+////////////////////////////////////////////////////////////////
+
 //Logical Operators
 /* Example 1 */
 if (4 > 3 && 2 < 5){
@@ -58,7 +60,8 @@ if(!sunlight){
 ////////////////////////////////////////////////////////////////
 
 //Relational Operator
-// all the uppercase characters are considered less than lowercase letters
+// all capital letters come before lowercase letters
+// in order to get around this convert all your letters to Uppercase or Lowercase
 console.log('Zoo' > 'alphabet');
 //false
 
@@ -66,5 +69,16 @@ console.log('Zoo' > 'alphabet');
 ////////////////////////////////////////////////////////////////
 
 //Ternary or Conditional Operator
+//          (condition) ? true-Value : false-Value
 console.log( 5 > 44 ? 'yes' : 'no');
 //no
+
+////////////////////////////////////////////////////////////////
+
+//Operator precedence
+//the order in which operators get executed
+let mdnTable = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence';
+//()
+let parenthesis = ('Parenthesis will have the highest precedence!!');
+let multiplication = ('multiplication will always execute first'(4 * 5));
+let logical = ('Logical && will take precedence over OR');
