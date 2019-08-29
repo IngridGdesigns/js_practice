@@ -1,4 +1,11 @@
-/*Rest Parameter examples*/
+/* 
+    1 - Rest Parameters
+    2 - Destructuring Arrays
+    3 - Converting integers and decimals
+    4 - Controlling loops 
+*/
+
+/* 1 - Rest Parameter examples*/
 //A rest parameter collects the arguments passed to a function, 
 /* Example 1 */
 function sendCookies(...allCookieIds) {
@@ -39,6 +46,11 @@ savoryFoods(str + ' ' + 'burritos', 'tacos', 'pupusas', 'tostadas');
 ///////////////////////////////////////////////////////////////
 
 //Destructuring Arrays
+/* Destructuring lets you extract values from arrays or objects then 
+assign those values to distinct variables. 
+
+It’s called “destructuring assignment,” because it “destructurizes” 
+by copying items into variables. But the array itself is not modified. */
 
 /* Example 1 */
 let pieIds = [2, 5, 9];
@@ -65,6 +77,38 @@ let remainingCookies;
 
 console.log(remainingCookies);
 
+/* Example 4 */
+//Ignore elements using commas, 
+// the second element of the array is skipped, the third one is assigned to job
+let [firstName, , job, ...theRest] = ["Julius", "Caesar", "Consul who eats desserts", "of the Roman Republic", "Cleopatras friend"];
+console.log( job ); // Consul
+console.log(...theRest);
+
+
+////////////////////////////////////////////////////////////////
+
+//Destructuring Objects
+
+
+/* Example 1 */
+//Destructuring objects, such as JSON, use curly braces or hashes to 
+//destructure
+let bike = { id: 2045, style: 'cruiser'};
+let {id, style } = bike;
+
+console.log(id, style);
+
+
+/* Example 2 */
+/* After initializing, if you want to destructure after you must put
+the variables in parenthesis, otherwise you will get an error, this
+error only occurs with objects not arrays as seen above */
+
+let skateboard = { serial: 8544, type: 'longboard'};
+let serial, type;
+({serial, type} = skateboard);//destructuring later in the code
+
+console.log(serial, type);
 
 /* Example 4 */
 let fruitBasket = { item1: 'apple', item2: 'grapes', item3: 'raspberry' };
@@ -87,30 +131,33 @@ let parentObject = {
   
   console.log(childTitleVeggies);
 
-////////////////////////////////////////////////////////////////
 
-//Destructuring Objects
-/* Destructuring lets you extract values from arrays or objects then assign 
-those values to distinct variables. */
+/* Example 6 */
+// A property can be both 1) unpacked from an object and assigned to a variable with
+// a different name and 2) assigned a default value in case the unpacked value is undefined.
 
-/* Example 1 */
-//Destructuring objects, such as JSON, use curly braces or hashes to 
-//destructure
-let bike = { id: 2045, style: 'cruiser'};
-let {id, style } = bike;
-
-console.log(id, style);
+let {book: goodreads = 'open veins of latinamerica', paperback: magazines = '10 ways to eat avocados'} = { paperback: 'howard the duck'};
+console.log(goodreads); //open veins of latinamerica
+console.log(magazines); //howard the duck
 
 
-/* Example 2 */
-//After initializing, if you want to destructure after you must put
-//the variables in parenthesis, otherwise you will get an error, this
-//error only occurs with objects not arrays as seen above
-let skateboard = { serial: 8544, type: 'longboard'};
-let serial, type;
-({serial, type} = skateboard);//destructuring later in the code
+let a, b;
+({a, b} = {a: 'Tony', b: 'Time'});
+console.log(a, b); //See note below
+/*
 
-console.log(serial, type);
+Notes: The parentheses ( ... ) around the assignment statement are required when using object literal 
+destructuring assignment without a declaration.
+
+{a, b} = {a: 1, b: 2} is not valid stand-alone syntax, as the {a, b} on the left-hand side is considered 
+a block and not an object literal.
+
+However, ({a, b} = {a: 1, b: 2}) is valid, as is var {a, b} = {a: 1, b: 2}
+
+Your ( ... ) expression needs to be preceded by a semicolon or it may be used to execute a function on the 
+previous line. */
+
+
 
 ////////////////////////////////////////////////////////////////
 
