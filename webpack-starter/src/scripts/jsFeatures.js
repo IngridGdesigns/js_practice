@@ -140,7 +140,7 @@ let {book: goodreads = 'open veins of latinamerica', paperback: magazines = '10 
 console.log(goodreads); //open veins of latinamerica
 console.log(magazines); //howard the duck
 
-
+/* Example 7 */
 let a, b;
 ({a, b} = {a: 'Tony', b: 'Time'});
 console.log(a, b); //See note below
@@ -157,8 +157,62 @@ However, ({a, b} = {a: 1, b: 2}) is valid, as is var {a, b} = {a: 1, b: 2}
 Your ( ... ) expression needs to be preceded by a semicolon or it may be used to execute a function on the 
 previous line. */
 
+/* Example 8*/
+//Nested object and array destructuring
+let metadatas = {
+    title: 'Scratchpad', //git commit -m 'added nested object and arry destructuring/ iteration'
+    translations: [
+      {
+        locale: 'de',
+        localization_tags: [],
+        last_edit: '2014-04-14T08:43:37',
+        url: '/de/docs/Tools/Scratchpad',
+        title: 'JavaScript-boogy'
+      }
+    ],
+    url: '/en-US/docs/Tools/Scratchpad'
+  };
 
+  let { 
+      title: mainTitle, //rename
+      translations: [//rename
+        {
+        title: bookTitle,
+        },
+    ],
+} = metadatas;
 
+  console.log(`${mainTitle} of this book: ${bookTitle}`); // Scratchpad of this book: JavaScript-boogy
+
+/* Example 9*/
+let url = 'https//same url stuff';
+var people = [
+  {
+    name: 'Mike Smith',
+    family: {
+      mother: 'Jane Smith',
+      father: 'Harry Smith',
+      brother: 'Gil Scott Heron',
+      sister: 'Samantha Smith',
+      url,
+    },
+    age: 35
+  },
+  {
+    name: 'Tom Jones',
+    family: {
+      mother: 'Norah Jones',
+      father: 'Richard Jones',
+      brother: 'Howard Jones',
+      url,
+    },
+    age: 25
+  }
+];
+
+for (var {name: n, family: {url: u, brother: bb}} of people) {
+  console.log('Url: ' + u + ' Brother ' + bb + ' ' + n);
+};
 ////////////////////////////////////////////////////////////////
 
 //Spread Syntax
