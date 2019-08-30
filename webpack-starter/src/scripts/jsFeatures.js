@@ -1,6 +1,6 @@
 /* 
     1 - Rest Parameters
-    2 - Destructuring Arrays
+    2 - Destructuring Arrays & Objects
     3 - Converting integers and decimals
     4 - Controlling loops 
 */
@@ -160,7 +160,7 @@ previous line. */
 /* Example 8*/
 //Nested object and array destructuring
 let metadatas = {
-    title: 'Scratchpad', //git commit -m 'added nested object and arry destructuring/ iteration'
+    title: 'Scratchpad', //
     translations: [
       {
         locale: 'de',

@@ -80,5 +80,6 @@ console.log( 5 > 44 ? 'yes' : 'no');
 let mdnTable = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence';
 //()
 let parenthesis = ('Parenthesis will have the highest precedence!!');
-let multiplication = ('multiplication will always execute first'(4 * 5));
+//let multiplication = ('multiplication will always execute first'(4 * 5));
 let logical = ('Logical && will take precedence over OR');
+

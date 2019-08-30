@@ -7,7 +7,7 @@ const cookieId = 34; //needs to be initialize, its declared as a constant
 
 console.log(cookieId);
 
-//let has block scoping and var doesnt't
+//let has block scoping and lets you catch errors early on!
 if(true){
     let cookie = 'chocolate chip';
 }
@@ -18,3 +18,4 @@ if(true){
     var cookies = 'yummm';//
 }
 console.log(cookies);
+

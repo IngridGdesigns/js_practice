@@ -90,12 +90,20 @@ console.log( z.getId.apply(newCheese, ['ID: '])); //apply accepts an array of ar
 let newFunction = z.getId.bind(newCheese = { cheeseId: 455}); //brand new function you use bind 
 console.log(newFunction() + ' new??');
 
-
+/* more info on scope http://hangar.runway7.net/javascript/guide */
 
 ////////////////////////////////////////////////////////////////
 
 //Arrow Functions
+//concise and streamlined syntax
+const time = () => console.log('time blast!!'); //no parenthesis needed because it returns only one value
+//if you have more than two arguments or other variables, you will need curly braces/hashes
+console.log(time());
 
+const get = (name, str) => {
+    return name + ' ' + str;
+};
+console.log(12, 'days left');
 ////////////////////////////////////////////////////////////////
 
 //Default Parameters
