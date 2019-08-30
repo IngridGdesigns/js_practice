@@ -78,7 +78,7 @@ let z =  {
         return prefix + ' is ' + this.cheeseId; //argument prefix added when added apply
     }
 };
-console.timeLog( z.getId() ); //421
+//console.timeLog( z.getId() ); //421
 
 ////////////////////////////////////////////////////////////////
 // call & apply - working with the same function above
@@ -97,13 +97,24 @@ console.log(newFunction() + ' new??');
 //Arrow Functions
 //concise and streamlined syntax
 const time = () => console.log('time blast!!'); //no parenthesis needed because it returns only one value
+//if there are no arguments, parenthesis should be empty (but they should be present)
 //if you have more than two arguments or other variables, you will need curly braces/hashes
 console.log(time());
 
-const get = (name, str) => {
-    return name + ' ' + str;
+const get = (name, str) => { //Multiline arrow functions: should use a normal 'return' within them
+    let sentence = `${name} ${str}`;
+    return sentence;
 };
 console.log(12, 'days left');
+
+
+
 ////////////////////////////////////////////////////////////////
 
 //Default Parameters
+const sandwich = function(topping, bread='sourdough'){ //default values must be on the right side
+    console.log(`one ${bread} sandwich with ${topping}`);
+};
+console.log(sandwich('tomato'));//one sourdough sandwhich with tomato
+console.log(sandwich('avocado', 'wheat'));//one wheat sandwhich with avocado
+
