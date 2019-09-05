@@ -44,8 +44,9 @@ console.log('foo'.hello()); //foo Hello
 it’s easy to use JSON for data exchange when the client uses JavaScript 
 and the server is written on Ruby/PHP/Java/Whatever. 
 
-Javascript provides methods: JSON.stringify to convert objects into JSON
-and JSON.parse to confvert JSON back into an object
+Javascript provides methods: 
+JSON.stringify to convert objects into JSON
+and JSON.parse to convert JSON back into an object
 */
 
 //JSON Stringify
@@ -86,8 +87,37 @@ console.log(meetupJson);
 //      "Github"
 //     ]
 //    }
+
+let room = {
+    number: 23 
+  };
+  
+  let party = {
+    title: "Dance time",
+    date: new Date(Date.UTC(2017, 0, 1)),
+    room, //automatically calls if it is available room ={ number: 23 }
+  };
+  
+ console.log( JSON.stringify(party) );
+
+ //JSON PARSE
+ let jsonIn = `[{"may": 5}, {"june": 6} ]`
+ let months = JSON.parse(jsonIn);
+ console.log(months); //parsed into a regualar object notation
 ////////////////////////////////////////////////////////////////
 
-//
+//Array Iteration
 
-/* Example  */
+/* Example  1*/
+let animalID = [
+    {dog: 123, color: 'black'},
+    {cat: 203, color: 'orange'},
+    {bird: 43, color: 'blue'}
+];
+
+animalID.forEach( (color) => console.log(color));
+
+let animalList = animalID.filter(
+    animal => animal.color === 'orange'
+);
+console.log(animalList); //returns cat:203, color: orange
