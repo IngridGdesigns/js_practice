@@ -111,15 +111,34 @@ let room = {
 //Array Iteration
 
 /* Example  1*/
+// Using animalID we will explore various methods to iterate through arrays
 let animalID = [
-    {dog: 123, color: 'black'},
-    {cat: 203, color: 'orange'},
-    {bird: 43, color: 'blue'}
+    { petID: 123, dog: 'big', color: 'black'},
+    { petID: 43, cat: 'small', color: 'orange'},
+    { petID: 378, bird: 'tiny', color: 'blue'}
 ];
 
-animalID.forEach( (color) => console.log(color));
+//forEach
+animalID.forEach( (color) => console.log(color));//calls a function on each element on the array
 
+
+//Filter
+//loop through the entire array, returns filtered new array  cat:203, color: orange`
 let animalList = animalID.filter(
     animal => animal.color === 'orange'
 );
-console.log(animalList); //returns cat:203, color: orange`
+console.log(animalList); 
+
+
+//Every 
+let animalresults = animalID.every(
+    pet => pet.petID > 10
+);
+console.log(animalresults); //returns true, every pet Id is greater than 10
+
+
+//Locate the first Match
+let pet = animalID.find(
+    pet => pet.petID < 50 //will locate the first intanse of petID less than 50
+);
+console.log(pet) //{ petID: 43, cat: 'small', color: 'orange' }
