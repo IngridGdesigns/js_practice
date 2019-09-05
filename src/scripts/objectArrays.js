@@ -87,6 +87,8 @@ console.log(meetupJson);
 //      "Github"
 //     ]
 //    }
+//the null holds a place for a function
+
 
 let room = {
     number: 23 
@@ -120,4 +122,4 @@ animalID.forEach( (color) => console.log(color));
 let animalList = animalID.filter(
     animal => animal.color === 'orange'
 );
-console.log(animalList); //returns cat:203, color: orange
+console.log(animalList); //returns cat:203, color: orange`
