@@ -105,6 +105,34 @@ console.log(JSON.stringify(party));
 let jsonIn = `[{"may": 5}, {"june": 6} ]`;
 let months = JSON.parse(jsonIn);
 console.log(months); //parsed into a regualar object notation
+
+// JSON.stringify() can take two additional arguments, the first one being a 
+// replacer function and the second a String or Number value to use as a space in 
+// the returned string. The replacer function can be used to filter-out values 
+// because any value returned as undefined will be out of the returned string:
+
+//replacer 
+const user = {
+    id: 229,
+    name: 'John',
+    email: 'john@awesome.com'
+  };
+  
+  function replacer(key, value) {
+    //console.log(typeof value);
+   
+    if (key === 'email') {
+      return undefined;
+    }
+    console.log(value );
+    return value;
+  }
+  
+  const userStr = JSON.stringify(user, replacer);
+  
+  // "{"id":229,"name":"John"}"
+
+
 ////////////////////////////////////////////////////////////////
 
 //Array Iteration
