@@ -137,8 +137,8 @@ let promise2 = new Promise(
     setTimeout(resolve, 100, 'a cool value');
     }
 );
-
-
+// To actually consume the value returned when the 
+// promise fulfills, since it is returning a promise, we could use a .then() block:
 promise.then( //built in promise function to get value from promise
     //takes two arguments.
     value => console.log('fulfilled: ' + value), // settling the promise2 
@@ -151,3 +151,37 @@ If a .then (or catch/finally, doesn’t matter) handler returns a promise,
 the rest of the chain waits until it settles. When it does, its result 
 (or error) is passed further.
 */
+
+/////////
+//So the async keyword is added to functions to tell them to return a promise rather 
+// than directly returning the value.
+function hi() { console.log('hi') };
+hi();
+
+async function goodbye() { console.log("goodbye") };
+goodbye() //returns a promise - promise pending
+
+
+//.then consumes the value returned as promise is fulfilled
+async function hola() { return "hola" };
+
+hola().then((value) => console.log(value))
+
+// Async functions turn any function to a promise
+async function fetchFromGitHub(endpoint) {
+    const url = `https://api.github.com${endpoint}`;
+    const response = await fetch(url);
+    return await response.json();
+}
+
+async function fetchUserAndRepos(handle) {
+    const [user, repos] = await Promise.all([
+        fetchFromGitHub(`/users/${handle}`),
+        fetchFromGitHub(`/users/${handle}/repos`)
+    ]);
+
+    console.log(user.name);
+    console.log(`${repos.length} repos`);
+}
+
+fetchUserAndRepos("mariusschulz");
