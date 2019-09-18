@@ -11,7 +11,7 @@ class Beverage {
     
 };
 let water = new Beverage();
-console.log(water);
+//console.log(water);
 ////////////////////////////////////////////////////////////////
 
 //Constructors and Properties
@@ -27,7 +27,7 @@ class Temperature {
     };
     let cool = new Temperature('cool');
     cool.id = 123; //changing id directly
-    console.log(cool.id);
+   // console.log(cool.id);
 
 ////////////////////////////////////////////////////////////////
 
@@ -36,18 +36,23 @@ class Temperature {
 /* Example 1 */
 class Dessert {
     //instantiating a class
-        constructor(id){
-            this.id = id; 
+        constructor(name, id){
+            this.id = id
+            this.name = name;
         }
         //methods are objects that exist in the class
         identify(sugar) {
-            return `Flan id: ${this.id}, has ${sugar}` //also uses this keyword too
+            return `${this.name} has ${sugar}, with id: ${this.id}` //also uses this keyword too
         // Flan id: 456, has high sugar levels
         }
     };
-    let flan = new Dessert(456);
-   
+    let flan = new Dessert('flan', 456);
+    let cookie = new Dessert('somecookie', 11);
+
     console.log(flan.identify('high sugar levels'));
+    console.log(cookie.identify('too much'));
+
+
 
 ////////////////////////////////////////////////////////////////
 
